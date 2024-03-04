@@ -1,1 +1,3 @@
 # JS-event-manip
+
+Par défaut, quand un utilisateur clique sur un lien, le navigateur dirige l'utilisateur vers ce lien. Mais si on a réécrit la façon dont le lien fonctionne, en JavaScript, on ne souhaite pas, en général, que le navigateur fasse cette redirection. On peut lui demander d'arrêter, avec une méthode de la propriété 'event', appelée 'preventDefault()'. Il nous faut faire référence à l'objet 'event' passé, et à l'intérieur, ici, écrire : 'e.preventDefault();'. Ça doit demander au navigateur de bloquer le comportement par défaut associé à cet événement.

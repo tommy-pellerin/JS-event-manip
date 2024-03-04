@@ -98,8 +98,8 @@ let mainRow = document.getElementsByClassName("row")[1];
 // console.log(card6);
 let arrowRight = document.querySelectorAll("a.btn-secondary")[0];
 // console.log(arrowRight);
-let moveCard = function(){
-  console.log("je bouge les cartes");
+let moveCardRight = function(event){
+  event.preventDefault();
   var card1 = mainRow.children[0];
   var card6 = mainRow.children[5];
   // console.log("la 1ere carte est :" + card1.textContent);
@@ -107,4 +107,18 @@ let moveCard = function(){
   mainRow.insertBefore(card6,card1);
   
 }
-arrowRight.addEventListener("click",moveCard);
+arrowRight.addEventListener("click",moveCardRight);
+
+//F8
+// on va récupérer le mainRow de l'exo7
+let arrowLeft = document.querySelectorAll("a.btn-primary")[0];
+console.log(arrowLeft);
+let moveCardLeft = function(event){
+  event.preventDefault();
+  var card1 = mainRow.children[0];
+  var card6 = mainRow.children[5];
+  mainRow.insertBefore(card1,null);
+}
+arrowLeft.addEventListener("click",moveCardLeft);
+
+//F9
