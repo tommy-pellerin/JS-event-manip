@@ -112,7 +112,7 @@ arrowRight.addEventListener("click",moveCardRight);
 //F8
 // on va récupérer le mainRow de l'exo7
 let arrowLeft = document.querySelectorAll("a.btn-primary")[0];
-console.log(arrowLeft);
+// console.log(arrowLeft);
 let moveCardLeft = function(event){
   event.preventDefault();
   var card1 = mainRow.children[0];
@@ -122,3 +122,40 @@ let moveCardLeft = function(event){
 arrowLeft.addEventListener("click",moveCardLeft);
 
 //F9
+let body = document.getElementsByTagName("body")[0];
+console.log(body);
+let logo = document.querySelector("a.navbar-brand");
+console.log(logo);
+let selectLogo = function(event){
+  event.preventDefault();
+  console.log("Je clique sur le logo");
+  console.log(event);
+}
+let moveBody = function(e) {
+  e.preventDefault();
+  // console.log(e);
+  console.log("je touche : " + e.key);
+  body.className = "";
+  switch(e.key) {
+  case "a":
+    body.classList.add("col-4");
+  break;
+  break;
+  case "y":
+    body.classList.add("col-4");
+    body.classList.add("offset-md-4");
+  break;
+  case "p":
+    body.classList.add("col-4");
+    body.classList.add("offset-md-8");
+  break;
+  case "b":
+    body.className = "";
+  break;
+  default:
+    console.log("Choisi entre 'a','y','p' ou 'b'");
+  break;  
+  }
+}
+logo.addEventListener("click",selectLogo)
+logo.addEventListener("keypress",moveBody)
