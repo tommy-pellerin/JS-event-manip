@@ -66,3 +66,28 @@ let removeLink = function(){
   }
 }
 header.addEventListener("dblclick",removeLink);
+
+//F6
+let cards = document.querySelectorAll("div.card");
+console.log(cards);
+for (let card of cards) {
+  let img = card.firstElementChild
+  console.log(img);
+  let cardBody = card.childNodes[3]
+  console.log(cardBody);
+  let p = cardBody.firstElementChild
+  console.log(p);
+  let viewBtn = cardBody.childNodes[3].firstElementChild.firstElementChild
+  console.log(viewBtn);
+  let reduceCard = function(){
+    p.classList.toggle("collapse");
+    if (img.style.width === "20%"){
+      img.style.width = "";
+    } else {
+      img.style.width = "20%";
+    } 
+  }
+  viewBtn.addEventListener("click",reduceCard)
+};
+
+//F7
