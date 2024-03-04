@@ -69,16 +69,16 @@ header.addEventListener("dblclick",removeLink);
 
 //F6
 let cards = document.querySelectorAll("div.card");
-console.log(cards);
-for (let card of cards) {
+// console.log(cards);
+for (let card of cards) { //nouvelle méthode pour itérer et qui est compatible avec tous les navigateurs
   let img = card.firstElementChild
-  console.log(img);
+  // console.log(img);
   let cardBody = card.childNodes[3]
-  console.log(cardBody);
+  // console.log(cardBody);
   let p = cardBody.firstElementChild
-  console.log(p);
+  // console.log(p);
   let viewBtn = cardBody.childNodes[3].firstElementChild.firstElementChild
-  console.log(viewBtn);
+  // console.log(viewBtn);
   let reduceCard = function(){
     p.classList.toggle("collapse");
     if (img.style.width === "20%"){
@@ -87,7 +87,24 @@ for (let card of cards) {
       img.style.width = "20%";
     } 
   }
-  viewBtn.addEventListener("click",reduceCard)
+  viewBtn.addEventListener("mouseover",reduceCard)
 };
 
 //F7
+let mainRow = document.getElementsByClassName("row")[1];
+// console.log(mainRow);
+// var card1 = mainRow.children[0];
+// var card6 = mainRow.children[5];
+// console.log(card6);
+let arrowRight = document.querySelectorAll("a.btn-secondary")[0];
+// console.log(arrowRight);
+let moveCard = function(){
+  console.log("je bouge les cartes");
+  var card1 = mainRow.children[0];
+  var card6 = mainRow.children[5];
+  // console.log("la 1ere carte est :" + card1.textContent);
+  // console.log("la 6e carte est :" + card6.textContent);
+  mainRow.insertBefore(card6,card1);
+  
+}
+arrowRight.addEventListener("click",moveCard);
